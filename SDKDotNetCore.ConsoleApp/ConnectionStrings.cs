@@ -15,6 +15,7 @@ namespace SDKDotNetCore.ConsoleApp
          InitialCatalog = "SDKDotNetCore",
          UserID = "sa",
          Password = "sasa@123",
+         TrustServerCertificate = true,
         };
     }
 }

@@ -6,8 +6,23 @@ for details => F11
 
 connection -> default value = null 
 
+----------------------------------
+** Dot Net **
+
 dataset => dataTable
 dataTable => dataRow
 dataRow => dataColumn
 
 parameter = @ sign => insert value
+
+---------------------------------
+** Dapper **
+
+toList => DB Execute
+
+---------------------------------
+** EFCore **
+
+Need microsoft.Sql  
+
+DbContext => Connect DB -> C#
