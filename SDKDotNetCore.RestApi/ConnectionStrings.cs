@@ -5,17 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SDKDotNetCore.ConsoleApp
+namespace SDKDotNetCore.ConsoleApp.Services
 {
     internal static class ConnectionStrings
     {
         public static SqlConnectionStringBuilder ConnectionStringBuilder = new SqlConnectionStringBuilder()
-        { 
-         DataSource = ".",
-         InitialCatalog = "SDKDotNetCore",
-         UserID = "sa",
-         Password = "sasa@123",
-         TrustServerCertificate = true,
+        {
+            DataSource = ".",
+            InitialCatalog = "SDKDotNetCore",
+            UserID = "sa",
+            Password = "sasa@123",
+            TrustServerCertificate = true,
         };
     }
 }

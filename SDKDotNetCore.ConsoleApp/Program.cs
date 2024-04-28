@@ -1,4 +1,4 @@
-﻿using SDKDotNetCore.ConsoleApp;
+﻿using SDKDotNetCore.ConsoleApp.EFCoreExamples;
 
 Console.WriteLine("Hello, World!");
 

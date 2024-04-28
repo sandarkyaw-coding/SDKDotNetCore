@@ -1,4 +1,6 @@
 ﻿using Dapper;
+using SDKDotNetCore.ConsoleApp.Dtos;
+using SDKDotNetCore.ConsoleApp.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SDKDotNetCore.ConsoleApp
+namespace SDKDotNetCore.ConsoleApp.DapperExamples
 {
     internal class DapperExample
     {
@@ -80,7 +82,7 @@ namespace SDKDotNetCore.ConsoleApp
         private void Update(int id, string title, string author, string content)
         {
             var item = new BlogDto
-            {   
+            {
                 BlogId = id,
                 BlogTitle = title,
                 BlogAuthor = author,

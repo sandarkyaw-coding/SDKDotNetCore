@@ -6,6 +6,15 @@ for details => F11
 
 connection -> default value = null 
 
+global variable -> with _ 
+
+http method
+- get  [No Accept Body]
+- post -> create
+- put -> update the whole object         
+- patch -> update each part of object
+- delete [No Accept Body]
+
 ----------------------------------
 ** Dot Net **
 

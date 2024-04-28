@@ -6,16 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SDKDotNetCore.ConsoleApp
+namespace SDKDotNetCore.ConsoleApp.AdoDotNetExamples
 {
     internal class AdoDotNetExample
     {
         private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
         {
-          DataSource = ".",  //server name
-          InitialCatalog = "SDKDotNetCore", //database name
-          UserID = "sa", //login
-          Password = "sasa@123"
+            DataSource = ".",  //server name
+            InitialCatalog = "SDKDotNetCore", //database name
+            UserID = "sa", //login
+            Password = "sasa@123"
         };
         public void Read()
         {
@@ -55,24 +55,25 @@ namespace SDKDotNetCore.ConsoleApp
             sqlDataAdapter.Fill(dt);
 
             connection.Close();
-           
-            if(dt.Rows.Count == 0)
+
+            if (dt.Rows.Count == 0)
             {
                 Console.WriteLine("No Data Found");
                 return;
             }
 
             DataRow dr = dt.Rows[0];
-            
-                Console.WriteLine("Blog Id => " + dr["BlogId"]);
-                Console.WriteLine("Blog Title => " + dr["BlogTitle"]);
-                Console.WriteLine("Blog Author => " + dr["BlogAuthor"]);
-                Console.WriteLine("Blog Content => " + dr["BlogContent"]);
-                Console.WriteLine("--------------------------------");
-   
+
+            Console.WriteLine("Blog Id => " + dr["BlogId"]);
+            Console.WriteLine("Blog Title => " + dr["BlogTitle"]);
+            Console.WriteLine("Blog Author => " + dr["BlogAuthor"]);
+            Console.WriteLine("Blog Content => " + dr["BlogContent"]);
+            Console.WriteLine("--------------------------------");
+
         }
 
-        public void Create(string title, string author, string content) {
+        public void Create(string title, string author, string content)
+        {
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
             connection.Open();
             string query = @"INSERT INTO [dbo].[Tbl_Blog]
@@ -119,7 +120,7 @@ namespace SDKDotNetCore.ConsoleApp
             Console.WriteLine(message);
         }
 
-       public void Delete(int id)
+        public void Delete(int id)
         {
             SqlConnection connection = new SqlConnection(_sqlConnectionStringBuilder.ConnectionString);
             connection.Open();
@@ -135,6 +136,6 @@ namespace SDKDotNetCore.ConsoleApp
             string message = result > 0 ? "Deleting Successful." : "Deleting Failed.";
             Console.WriteLine(message);
         }
-        
+
     }
 }

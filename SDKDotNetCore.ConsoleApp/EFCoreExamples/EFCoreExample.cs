@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SDKDotNetCore.ConsoleApp.Dtos;
 
-namespace SDKDotNetCore.ConsoleApp
+namespace SDKDotNetCore.ConsoleApp.EFCoreExamples
 {
     internal class EFCoreExample
     {
@@ -12,7 +13,7 @@ namespace SDKDotNetCore.ConsoleApp
 
         public void Run()
         {
-            //Read();
+            Read();
             //Edit(1);
             //Edit(12);
             Create("EFCore 3", "dar dar 3", "EFCore Example Again...");
@@ -22,7 +23,7 @@ namespace SDKDotNetCore.ConsoleApp
 
         private void Read()
         {
-            
+
             var lst = db.Blogs.ToList();
             foreach (BlogDto item in lst)
             {
@@ -36,8 +37,8 @@ namespace SDKDotNetCore.ConsoleApp
 
         private void Edit(int id)
         {
-           var item = db.Blogs.FirstOrDefault(x => x.BlogId == id);
-            if(item is null)
+            var item = db.Blogs.FirstOrDefault(x => x.BlogId == id);
+            if (item is null)
             {
                 Console.WriteLine("No Data Found");
                 return;
@@ -70,7 +71,7 @@ namespace SDKDotNetCore.ConsoleApp
         {
             var item = db.Blogs.FirstOrDefault(x => x.BlogId == id);
 
-            if(item is null)
+            if (item is null)
             {
                 Console.WriteLine("No Data Found.");
                 return;
@@ -90,7 +91,7 @@ namespace SDKDotNetCore.ConsoleApp
         {
             var item = db.Blogs.FirstOrDefault(x => x.BlogId == id);
 
-            if(item is null)
+            if (item is null)
             {
                 Console.WriteLine("No Data Found");
                 return;
