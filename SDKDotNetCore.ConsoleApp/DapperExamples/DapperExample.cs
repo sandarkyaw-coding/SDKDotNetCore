@@ -40,7 +40,7 @@ namespace SDKDotNetCore.ConsoleApp.DapperExamples
         private void Edit(int id)
         {
             using IDbConnection db = new SqlConnection(ConnectionStrings.ConnectionStringBuilder.ConnectionString);
-            var item = db.Query("select * from tbl_blog where blogid = @BlogId", new BlogDto { BlogId = id }).FirstOrDefault();
+            var item = db.Query<BlogDto>("select * from tbl_blog where blogid = @BlogId", new BlogDto { BlogId = id }).FirstOrDefault();
 
             if (item is null)
             {
