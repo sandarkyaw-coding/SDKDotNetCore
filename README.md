@@ -8,7 +8,7 @@ for details => F11
 
 connection -> default value = null 
 
-global variable -> with _ 
+global variable declare -> with _ 
 
 http method
 - get  [No Accept Body]
@@ -42,7 +42,10 @@ DbContext => Connect DB -> C#
 ** Web API CRUD - Dot Net Core ** (28.4.24)
 Controller - Model 
 
----------------------------------
+------------------------------------------
 ** Web API CRUD - Dapper ** (1.4.24)
 
 -----------------------------------
+** Web API CRUD - Ado Dot Net ** (5.2.24)
+
+_________________________________________
