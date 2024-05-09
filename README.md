@@ -30,6 +30,7 @@ parameter = @ sign => insert value
 ** Dapper ** (26.4.24)
 
 toList => DB Execute
+Query
 
 ---------------------------------
 ** EFCore ** (27.4.24)
@@ -44,6 +45,8 @@ Controller - Model
 
 ------------------------------------------
 ** Web API CRUD - Dapper ** (1.4.24)
+
+params => auto skip null value
 
 -----------------------------------
 ** Web API CRUD - Ado Dot Net ** (5.2.24)

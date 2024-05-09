@@ -166,7 +166,7 @@ namespace SDKDotNetCore.RestApi.Controllers
             string findIdQuery = "select * from Tbl_Blog where BlogId = @BlogId";
             SqlCommand findIdCmd = new SqlCommand(findIdQuery, connection);
             findIdCmd.Parameters.AddWithValue("@BlogId", id);
-            int item = (int)findIdCmd.ExecuteNonQuery();
+            int item = (int)findIdCmd.ExecuteScalar();
             if (item == 0)
             {
                 return NotFound("No Data Found");
