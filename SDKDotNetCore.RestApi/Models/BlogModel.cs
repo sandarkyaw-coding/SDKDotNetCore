@@ -21,4 +21,5 @@ public class BlogModel
     public string? BlogContent { get; set; }
 }
 
+//lasted way
 //public record BlogEntity(int BlogId, string BlogTitle, string BlogAuthor, string BlogContent);

@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Scaffolding.Metadata;
-using SDKDotNetCore.ConsoleApp.Services;
 using SDKDotNetCore.RestApi.Models;
 using System.Data;
 using System.Data.SqlClient;
