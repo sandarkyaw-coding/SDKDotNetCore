@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCore.RestApi", "SD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCore.Shared", "SDKDotNetCore.Shared\SDKDotNetCore.Shared.csproj", "{83917981-5194-4D1E-ABEA-1018CFA5555B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKDotNetCore.RestApiWithNLayer", "SDKDotNetCore.RestApiWithNLayer\SDKDotNetCore.RestApiWithNLayer.csproj", "{8E63822A-3F29-4033-96FA-0C3D23CA4ED1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCore.RestApiWithNLayer", "SDKDotNetCore.RestApiWithNLayer\SDKDotNetCore.RestApiWithNLayer.csproj", "{8E63822A-3F29-4033-96FA-0C3D23CA4ED1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKDotNetCore.ConsoleAppHttpClient", "SDKDotNetCore.ConsoleAppHttpClient\SDKDotNetCore.ConsoleAppHttpClient.csproj", "{EB0AB7F3-FD14-420C-B6A3-8AE3D0638580}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{8E63822A-3F29-4033-96FA-0C3D23CA4ED1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E63822A-3F29-4033-96FA-0C3D23CA4ED1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E63822A-3F29-4033-96FA-0C3D23CA4ED1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB0AB7F3-FD14-420C-B6A3-8AE3D0638580}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB0AB7F3-FD14-420C-B6A3-8AE3D0638580}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB0AB7F3-FD14-420C-B6A3-8AE3D0638580}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB0AB7F3-FD14-420C-B6A3-8AE3D0638580}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
