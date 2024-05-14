@@ -18,7 +18,7 @@ namespace SDKDotNetCore.Shared
             _connectionString = connectionString;
         }
 
-        public List<T>? Query<T>(string query,params AdoDotNetParameter[]? parameters)
+        public List<T> Query<T>(string query,params AdoDotNetParameter[]? parameters)
         {
             SqlConnection connection = new SqlConnection(_connectionString);
 
@@ -51,7 +51,7 @@ namespace SDKDotNetCore.Shared
             return lst;
         }
 
-        public T? QueryFirstOrDefault<T>(string query, params AdoDotNetParameter[]? parameters)
+        public T QueryFirstOrDefault<T>(string query, params AdoDotNetParameter[]? parameters)
         {
             SqlConnection connection = new SqlConnection(_connectionString);
 
