@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCore.RestApiWithNL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCore.ConsoleAppHttpClient", "SDKDotNetCore.ConsoleAppHttpClient\SDKDotNetCore.ConsoleAppHttpClient.csproj", "{EB0AB7F3-FD14-420C-B6A3-8AE3D0638580}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKDotNetCore.HttpClientExamples", "SDKDotNetCore.HttpClientExamples\SDKDotNetCore.HttpClientExamples.csproj", "{38FE3968-1821-4E6E-BA63-877DE1AB5719}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCore.HttpClientExamples", "SDKDotNetCore.HttpClientExamples\SDKDotNetCore.HttpClientExamples.csproj", "{38FE3968-1821-4E6E-BA63-877DE1AB5719}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKDotNetCore.ConsoleAppRestClientExamples", "SDKDotNetCore.ConsoleAppRestClientExamples\SDKDotNetCore.ConsoleAppRestClientExamples.csproj", "{1FEFD422-AE45-4550-A2D9-B81231B640CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{38FE3968-1821-4E6E-BA63-877DE1AB5719}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38FE3968-1821-4E6E-BA63-877DE1AB5719}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38FE3968-1821-4E6E-BA63-877DE1AB5719}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FEFD422-AE45-4550-A2D9-B81231B640CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FEFD422-AE45-4550-A2D9-B81231B640CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FEFD422-AE45-4550-A2D9-B81231B640CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FEFD422-AE45-4550-A2D9-B81231B640CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
