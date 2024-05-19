@@ -15,13 +15,14 @@ namespace SDKDotNetCore.HttpClientExamples
         private readonly string _blogEndPoint = "api/blog";
         public async Task RunAsync()
         {
-            await ReadAsync();
-            //await EditAsync(3);
-            //await EditAsync(2024);
+             await ReadAsync();
+            // await EditAsync(3);
+            // await EditAsync(2024);
 
-            //await CreateAsynsc("dar dar", "rad rad", "dara dara");
-            //await UpdatePutAsync(3,"doo doo", "dee dee", "dae dae");
-            //await DeleteAsync(23);
+            // await CreateAsynsc("dar dar", "rad rad", "dara dara");
+            // await UpdatePutAsync(3,"doo doo", "dee dee", "dae dae");
+            // await DeleteAsync(222);
+            // await DeleteAsync(3);
         }
 
         private async Task ReadAsync()
@@ -103,7 +104,7 @@ namespace SDKDotNetCore.HttpClientExamples
             string blogJson = JsonConvert.SerializeObject(blogModel);
 
             HttpContent httpContent = new StringContent(blogJson, Encoding.UTF8, Application.Json);
-            var response = await _client.PutAsync(_blogEndPoint, httpContent);
+            var response = await _client.PutAsync($"{_blogEndPoint}/{id}", httpContent);
 
             if (response.IsSuccessStatusCode)
             {

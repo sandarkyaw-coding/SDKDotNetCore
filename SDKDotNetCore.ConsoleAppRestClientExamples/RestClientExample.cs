@@ -16,13 +16,14 @@ namespace SDKDotNetCore.ConsoleAppRestClientExamples
         private readonly string _blogEndPoint = "api/blog";
         public async Task RunAsync()
         {
-            await ReadAsync();
-            //await EditAsync(3);
-            //await EditAsync(2024);
+            // await ReadAsync();
+            // await EditAsync(2021);
+            // await EditAsync(2024);
 
-            //await CreateAsynsc("dar dar", "rad rad", "dara dara");
-            //await UpdatePutAsync(3,"doo doo", "dee dee", "dae dae");
-            //await DeleteAsync(23);
+            // await CreateAsynsc("dar dar", "rad rad", "dara dara");
+            // await UpdatePutAsync(2021,"doo doo", "dee dee", "dae dae");
+            // await DeleteAsync(2021);
+            // await DeleteAsync(2024);
         }
 
         private async Task ReadAsync()
@@ -124,7 +125,7 @@ namespace SDKDotNetCore.ConsoleAppRestClientExamples
 
         private async Task DeleteAsync(int id)
         {
-            RestRequest restRequest = new RestRequest($"{_blogEndPoint}/{id}");
+            RestRequest restRequest = new RestRequest($"{_blogEndPoint}/{id}", Method.Delete);
             var response = await _client.ExecuteAsync(restRequest);
 
             if (response.IsSuccessStatusCode)
