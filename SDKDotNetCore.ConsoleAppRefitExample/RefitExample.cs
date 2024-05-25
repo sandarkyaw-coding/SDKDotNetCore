@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,15 +10,16 @@ namespace SDKDotNetCore.ConsoleAppRefitExample
 {
     public class RefitExample
     {
-        private readonly IBlogApi _service = RestService.For<IBlogApi>("https://localhost:7197");
+        private readonly IBlogApi _service = RestService.For<IBlogApi>("https://localhost:7039");
         public async Task RunAsync()
         {
-            await ReadAsync();
-            //await EditAsync(2);
-            //await EditAsync(34);
-            //await CreateAsync("dar dar", "Hello", "testing ");
-           //await UpdateAsync(1, "dar dar", "Hello", "Sorry For Late");
-           //await DeleteAsync(2);
+           //await ReadAsync();
+           //await EditAsync(1);
+           //await EditAsync(34);
+           //await CreateAsync("dar dar", "Hello", "testing ");
+           //await UpdateAsync(1, "SDK", "Hee Hee", "Sorry For Late");
+           //await UpdateAsync(34, "SDK", "Hee Hee", "Sorry For Late");
+           //await DeleteAsync(8);
         }
 
         public async Task ReadAsync()
@@ -26,6 +28,7 @@ namespace SDKDotNetCore.ConsoleAppRefitExample
 
             foreach (var blog in lst)
             {
+                Console.WriteLine($"Id => {blog.BlogId}");
                 Console.WriteLine($"Title => {blog.BlogTitle}");
                 Console.WriteLine($"Author => {blog.BlogAuthor}");
                 Console.WriteLine($"Content => {blog.BlogContent}");
@@ -37,6 +40,7 @@ namespace SDKDotNetCore.ConsoleAppRefitExample
             try
             {      
                 var item = await _service.GetBlog(id);
+                Console.WriteLine($"Id => {item.BlogId}");
                 Console.WriteLine($"Title => {item.BlogTitle}");
                 Console.WriteLine($"Author => {item.BlogAuthor}");
                 Console.WriteLine($"Content => {item.BlogContent}");
