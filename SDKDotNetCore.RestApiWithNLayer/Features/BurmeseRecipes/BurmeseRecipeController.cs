@@ -18,7 +18,13 @@ public class BurmeseRecipeController : ControllerBase
     public async Task<IActionResult> Get()
     {
         var model = await GetDataFromApiAsync();
-        return Ok(model);
+        List<RecipesName> lst = model.Select(x => new RecipesName
+        {
+            Guid = x.Guid,
+            Name = x.Name
+        }).ToList();
+
+        return Ok(lst);
     }
 
     [HttpGet("Menu/{guid}")]
@@ -26,7 +32,7 @@ public class BurmeseRecipeController : ControllerBase
     {
         var model = await GetDataFromApiAsync();
         return Ok(model.FirstOrDefault(x => x.Guid == guid)); 
-    }
+    } 
 }
 
 public class BurmeseRecipes
@@ -42,6 +48,11 @@ public class Recipes
     public string CookingInstructions { get; set; }
     public string UserType { get; set; }
 }
-  
 
-/*
+public class RecipesName
+{
+    public string Guid { get; set; }
+    public string Name { get; set; }
+}
+
+
