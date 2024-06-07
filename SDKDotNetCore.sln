@@ -29,7 +29,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCore.ConsoleAppRef
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCore.WinFormsApp1", "SDKDotNetCore.WinFormsApp1\SDKDotNetCore.WinFormsApp1.csproj", "{94C02365-CB94-4AE6-BC47-CE692FD0A777}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKDotNetCoreWinFormsAppSqlInjection", "SDKDotNetCoreWinFormsAppSqlInjection\SDKDotNetCoreWinFormsAppSqlInjection.csproj", "{CCB563C4-1F8F-4F31-B9F3-15313817E4ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCoreWinFormsAppSqlInjection", "SDKDotNetCoreWinFormsAppSqlInjection\SDKDotNetCoreWinFormsAppSqlInjection.csproj", "{CCB563C4-1F8F-4F31-B9F3-15313817E4ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKDotNetCoreNLayer.UI", "SDKDotNetCoreNLayer.UI\SDKDotNetCoreNLayer.UI.csproj", "{C46B9BD0-ED9B-4A63-82B2-F676A794C8B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKDotNetCoreNLayer.BusinessLogic", "SDKDotNetCoreNLayer.BusinessLogic\SDKDotNetCoreNLayer.BusinessLogic.csproj", "{6F7CC2BA-29B7-43AA-A49A-4375F9470EFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKDotNetCoreNLayer.DataAccess", "SDKDotNetCoreNLayer.DataAccess\SDKDotNetCoreNLayer.DataAccess.csproj", "{1C3155D1-A54B-4517-80FE-CEB4D60C464C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +87,18 @@ Global
 		{CCB563C4-1F8F-4F31-B9F3-15313817E4ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCB563C4-1F8F-4F31-B9F3-15313817E4ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCB563C4-1F8F-4F31-B9F3-15313817E4ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C46B9BD0-ED9B-4A63-82B2-F676A794C8B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C46B9BD0-ED9B-4A63-82B2-F676A794C8B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C46B9BD0-ED9B-4A63-82B2-F676A794C8B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C46B9BD0-ED9B-4A63-82B2-F676A794C8B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F7CC2BA-29B7-43AA-A49A-4375F9470EFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F7CC2BA-29B7-43AA-A49A-4375F9470EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F7CC2BA-29B7-43AA-A49A-4375F9470EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F7CC2BA-29B7-43AA-A49A-4375F9470EFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C3155D1-A54B-4517-80FE-CEB4D60C464C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C3155D1-A54B-4517-80FE-CEB4D60C464C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C3155D1-A54B-4517-80FE-CEB4D60C464C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C3155D1-A54B-4517-80FE-CEB4D60C464C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
