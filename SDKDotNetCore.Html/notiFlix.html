@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  />
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notiflix@3.2.7/src/notiflix.min.css"> -->
+    <link rel="stylesheet" href="./notiflix-Notiflix-78ca6fa/dist/notiflix-3.2.7.min.css">
+</head>
+<body>
+    <div class="card" id="cardId" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    <button type="button" class="btn btn-success" id="btnSave">Save</button>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/notiflix@3.2.7/dist/notiflix-aio-3.2.7.min.js" integrity="sha256-G6sj3uSY1Rtnyomq54b5wiwwe2+A5Zym254DHutrXM4=" crossorigin="anonymous"></script> -->
+    <script src="./notiflix-Notiflix-78ca6fa/dist/notiflix-3.2.7.min.js"></script>
+    <script>
+        // Notiflix.Notify.success('this is success.');
+        // Notiflix.Report.success(
+        //     'NotiFlix Success',
+        //     '"Do not try but try to die."<br/><br/>- Albert Loser',
+        //     'Okay',
+        // );
+        $('#btnSave').click(function(){
+             Notiflix.Block.standard("#cardId");
+
+             setTimeout(() => {
+              Notiflix.Block.remove("#cardId")
+             }, 3000);
+
+            // Notiflix.Loading.standard();
+            // setTimeout(() => {
+            //     Notiflix.Loading.remove();
+            // }, 2000);
+            
+        });
+        
+    </script>
+</body>
+</html> 
