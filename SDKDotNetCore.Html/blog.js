@@ -124,7 +124,6 @@ $('#btnSave').click(function(){
     const title = $('#txtTitle').val();
     const author = $('#txtAuthor').val();
     const content = $('#txtContent').val();
-
     if(blogId === null){
         createBlog(title, author, content);
     }
