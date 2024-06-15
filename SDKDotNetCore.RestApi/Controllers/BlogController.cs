@@ -13,12 +13,20 @@ namespace SDKDotNetCore.RestApi.Controllers
     [ApiController]
     public class BlogController : ControllerBase
     {
-        private readonly AppDBContext _context;
+       /* private readonly AppDBContext _context;
 
         public BlogController()
         {
             _context = new AppDBContext();
+        } */
+
+        private readonly AppDBContext _context;
+
+        public BlogController(AppDBContext context)
+        {
+            _context = context;
         }
+
         [HttpGet]
         public IActionResult Read()
         {
