@@ -54,3 +54,5 @@ params => auto skip null value
 _________________________________________
 
 -- update int to something access
+
+-- extension class must be static class

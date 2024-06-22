@@ -1,6 +1,5 @@
 const tblProduct = "products";
 let productId = null;
-let count = 0;
 let qty = 0;
 let total = 0;
 getProductsTable();
@@ -62,6 +61,7 @@ function clearControls() {
 function getProductsTable() {
     const lst = getProducts();
     let htmlRows = "";
+    let count = 0;
     lst.forEach((item) => {
         const htmlRow = `
     <tr>
