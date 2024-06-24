@@ -29,7 +29,7 @@ app.MapGet("/", () => "Hello World.");
 
 //BlogService.AddBlogFeatures(app);
 
-app.MapBlogs();
+app.MapBlogs() ;
 
 app.Run();
 
