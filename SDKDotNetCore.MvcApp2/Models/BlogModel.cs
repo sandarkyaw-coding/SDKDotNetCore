@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SDKDotNetCore.MvcApp.Models;
+namespace SDKDotNetCore.MvcApp2.Models;
 
 [Table("Tbl_Blog")]
 
@@ -16,6 +16,13 @@ public class BlogModel
     public string? BlogContent { get; set; }
 }
 
+
+public class MessageModel
+{
+    public bool IsSuccess { get; set; }
+
+    public string Message { get; set; }
+}
 
 //lasted way
 //public record BlogEntity(int BlogId, string BlogTitle, string BlogAuthor, string BlogContent);

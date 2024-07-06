@@ -39,7 +39,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCoreNLayer.DataAcc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCore.MinimalApi", "SDKDotNetCore.MinimalApi\SDKDotNetCore.MinimalApi.csproj", "{3A4E2604-E121-4131-94D2-A58FCD08E9DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKDotNetCore.MvcApp", "SDKDotNetCore.MvcApp\SDKDotNetCore.MvcApp.csproj", "{21EA37EB-71CE-4858-8DEA-730582B3B04B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCore.MvcApp", "SDKDotNetCore.MvcApp\SDKDotNetCore.MvcApp.csproj", "{21EA37EB-71CE-4858-8DEA-730582B3B04B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKDotNetCore.MvcApp2", "SDKDotNetCore.MvcApp2\SDKDotNetCore.MvcApp2.csproj", "{908D735E-A567-4692-8C25-F13A059FDC5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +113,10 @@ Global
 		{21EA37EB-71CE-4858-8DEA-730582B3B04B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21EA37EB-71CE-4858-8DEA-730582B3B04B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21EA37EB-71CE-4858-8DEA-730582B3B04B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{908D735E-A567-4692-8C25-F13A059FDC5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{908D735E-A567-4692-8C25-F13A059FDC5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{908D735E-A567-4692-8C25-F13A059FDC5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{908D735E-A567-4692-8C25-F13A059FDC5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
