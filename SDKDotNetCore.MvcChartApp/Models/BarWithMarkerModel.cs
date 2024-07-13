@@ -41,7 +41,6 @@
         public List<GoalsList> Goals { get; set; }
     }
 
-
     public class BarWithMarkerModel
     {
         public string Name { get; set; }

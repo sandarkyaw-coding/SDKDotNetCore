@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SDKDotNetCore.MvcChartApp.Models;
 
-namespace SDKDotNetCore.MvcChartApp.Controllers
+namespace DotNetTrainingBatch4.MvcChartApp.Controllers
 {
     public class BarWithMarkerController : Controller
     {
@@ -69,9 +69,10 @@ namespace SDKDotNetCore.MvcChartApp.Controllers
                             new GoalsList
                             {
                                 Name = "Expected",
-                                Value = 34,
+                                Value = 54,
                                 StrokeWidth = 5,
-                                StrokeHeight = 10,
+                                StrokeHeight = 0,
+                                StrokeLineCap = "round",
                                 StrokeColor = "#775DD0"
                             }
                         }
