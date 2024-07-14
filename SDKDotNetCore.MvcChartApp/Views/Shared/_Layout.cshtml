@@ -28,11 +28,15 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
+                               Menu
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" asp-controller="ApexChart" asp-action="PieChart">ApexChart/PieChart</a></li>
+                                <li><a class="dropdown-item" asp-controller="BarWithMarker" asp-action="BarWithMarker">ApexChart/BarWithMaker</a></li>
+                                <li><a class="dropdown-item" asp-controller="CanvasJs" asp-action="LineChart">CanvasJs/LineChart</a></li>
+                                <li><a class="dropdown-item" asp-controller="ChartJs" asp-action="ExampleChart">ChartJs/ExampleChart</a></li>
+                                <li><a class="dropdown-item" asp-controller="ChartJs" asp-action="InterpolationModes">ChartJs/InterpolationChart</a></li>
+                                <li><a class="dropdown-item" asp-controller="HighCharts" asp-action="PieChart">HighCharts/PieChart</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
