@@ -1,10 +1,15 @@
 using Serilog;
+using Serilog.Sinks.MSSqlServer;
 
 string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "logs/SDKDotNetCore.MvcChartApp.log");
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
     .WriteTo.File(filePath, rollingInterval: RollingInterval.Hour)
+    .WriteTo
+    .MSSqlServer(
+        connectionString: "Server=localhost;Database=SDKDotNetCore; User ID = sa;Password = sasa@123; TrustServerCertificate = true;",
+        sinkOptions: new MSSqlServerSinkOptions { TableName = "Tbl_LogEvents", AutoCreateSqlTable = true })
     .CreateLogger();
 
 try
