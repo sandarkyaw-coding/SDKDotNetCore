@@ -13,5 +13,15 @@ namespace SDKDotNetCore.MvcChartApp.Controllers
         {
             return View();
         }
+
+        public IActionResult LegendPointStyle()
+        {
+            return View();
+        }
+
+        public IActionResult FloatingBar()
+        {
+            return View();
+        }
     }
 }

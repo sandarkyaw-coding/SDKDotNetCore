@@ -1,0 +1,160 @@
+﻿<div>
+    <canvas id="myChart"></canvas>
+</div>
+
+@section scripts{
+    <script>
+        const CHART_COLORS = {
+            red: 'rgb(255, 99, 132)',
+            orange: 'rgb(255, 159, 64)',
+            yellow: 'rgb(255, 205, 86)',
+            green: 'rgb(75, 192, 192)',
+            blue: 'rgb(54, 162, 235)',
+            purple: 'rgb(153, 102, 255)',
+            grey: 'rgb(201, 203, 207)'
+        };
+
+        const MONTHS = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'
+        ];
+
+        var _seed = 1; // initialize the seed
+
+        function valueOrDefault(value, defaultValue) {
+            return value !== undefined ? value : defaultValue;
+        }
+
+        var Utils = {
+            rand: function (min, max) {
+                min = valueOrDefault(min, 0);
+                max = valueOrDefault(max, 0);
+                _seed = (_seed * 9301 + 49297) % 233280;
+                return min + (_seed / 233280) * (max - min);
+            },
+
+            months: function (config) {
+                var cfg = config || {};
+                var count = cfg.count || 12;
+                var section = cfg.section;
+                var values = [];
+                var i, value;
+
+                for (i = 0; i < count; ++i) {
+                    value = MONTHS[Math.ceil(i) % 12];
+                    values.push(value.substring(0, section));
+                }
+
+                return values;
+            },
+
+            numbers: function(config) {
+                var cfg = config || {};
+        var min = valueOrDefault(cfg.min, 0);
+        var max = valueOrDefault(cfg.max, 100);
+        var from = valueOrDefault(cfg.from, []);
+        var count = valueOrDefault(cfg.count, 8);
+        var decimals = valueOrDefault(cfg.decimals, 8);
+        var continuity = valueOrDefault(cfg.continuity, 1);
+        var dfactor = Math.pow(10, decimals) || 0;
+        var data = [];
+        var i, value;
+
+        for (i = 0; i < count; ++i) {
+            value = (from[i] || 0) + this.rand(min, max);
+            if (this.rand() <= continuity) {
+                data.push(Math.round(dfactor * value) / dfactor);
+            } else {
+                data.push(null);
+            }
+        }
+
+        return data;
+        },
+          /*  colorLib: function(hex) {
+                var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? {
+            r: parseInt(result[1], 16),
+            g: parseInt(result[2], 16),
+            b: parseInt(result[3], 16)
+        } : null;
+        },
+
+            transparentize: function(value, opacity) {
+                var alpha = opacity === undefined ? 0.5 : opacity;
+                var rgb = this.colorLib(value);
+                return `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${alpha})`;
+        } */
+            hexToRgb: function (hex) {
+                hex = hex.trim(); // Remove any whitespace from the hex code
+                if (!hex.startsWith('#')) {
+                    hex = '#' + hex; // Add a # symbol if it's missing
+                }
+                var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+                if (result) {
+                    return {
+                        r: parseInt(result[1], 16),
+                        g: parseInt(result[2], 16),
+                        b: parseInt(result[3], 16)
+                    };
+                } else {
+                    console.error(`Invalid hex color code: ${hex}`);
+                    return null; // Return null if the hex code is invalid
+                }
+            },
+            transparentize: function (value, opacity) {
+                var rgb = this.hexToRgb(value);
+                if (!rgb) {
+                    console.error(`Cannot transparentize invalid color: ${value}`);
+                    return null; // Return null if the color is invalid
+                }
+                return `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${opacity})`;
+            }
+        };
+
+        const DATA_COUNT = 7;
+        const NUMBER_CFG = { count: DATA_COUNT, min: -100, max: 100 };
+        const data = {
+            labels: Utils.months({ count: DATA_COUNT }),
+            datasets: [
+                {
+                    label: 'Dataset 1',
+                    data: Utils.numbers(NUMBER_CFG),
+                    fill: false,
+                    borderColor: CHART_COLORS.red,
+                    backgroundColor: Utils.transparentize(CHART_COLORS.red, 0.5),
+                    borderWidth: 1,
+                    pointStyle: 'rectRot',
+                    pointRadius: 5,
+                    pointBorderColor: 'rgb(0, 0, 0)'
+                },
+            ]
+        };
+
+        const config = {
+            type: 'line',
+            data: data,
+            options: {
+                plugins: {
+                    legend: {
+                        labels: {
+                            usePointStyle: true,
+                        },
+                    }
+                }
+            }
+        };
+
+        const ctx = document.getElementById('myChart');
+        new Chart(ctx, config);
+    </script>}

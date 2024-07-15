@@ -8,5 +8,14 @@ namespace SDKDotNetCore.MvcChartApp.Controllers
         {
             return View();
         }
+
+        public IActionResult StellarChart()
+        {
+            return View();
+        }
+        public IActionResult ThreeD_BubblesChart()
+        {
+            return View();
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Data.Common;
 
 namespace SDKDotNetCore.MvcChartApp.Controllers
 {
@@ -14,6 +15,15 @@ namespace SDKDotNetCore.MvcChartApp.Controllers
         public IActionResult LineChart()
         {
             _logger.LogInformation("Line Chart..");
+            return View();
+        }
+
+        public IActionResult AxisAreaChart() {
+            return View();
+        }
+
+        public IActionResult LiveColumnChart()
+        {
             return View();
         }
     }
