@@ -47,7 +47,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCore.MvcChartApp",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCore.ConsoleAppLogging", "SDKDotNetCore.ConsoleAppLogging\SDKDotNetCore.ConsoleAppLogging.csproj", "{AD6DB2E3-F353-44F1-931C-DF19A9FF6257}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKDotNetCore.RealTimeChartApp", "SDKDotNetCore.RealTimeChartApp\SDKDotNetCore.RealTimeChartApp.csproj", "{4C0FBC57-70CB-4A7D-914B-5BB18552DE24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCore.RealTimeChartApp", "SDKDotNetCore.RealTimeChartApp\SDKDotNetCore.RealTimeChartApp.csproj", "{4C0FBC57-70CB-4A7D-914B-5BB18552DE24}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCore.RealTimeChartApp2", "SDKDotNetCore.RealTimeChartApp2\SDKDotNetCore.RealTimeChartApp2.csproj", "{F7C5DE7B-3C6C-4AB3-BF1C-64C9A98196AB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCore.ConsoleAppEFCore", "SDKDotNetCore.ConsoleAppEFCore\SDKDotNetCore.ConsoleAppEFCore.csproj", "{D0A331E4-B7E2-4F8E-A4CB-553E1B882EB8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCore.ConsoleAppEFCore.Databases", "SDKDotNetCore.ConsoleAppEFCore.Databases\SDKDotNetCore.ConsoleAppEFCore.Databases.csproj", "{88B35A64-DB5F-45A7-97CE-B2BCBE7056D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKDotNetCore.MvcDesignApp", "SDKDotNetCore.MvcDesignApp\SDKDotNetCore.MvcDesignApp.csproj", "{43C579D2-DE72-474B-8D80-7B6501D661FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -135,6 +143,22 @@ Global
 		{4C0FBC57-70CB-4A7D-914B-5BB18552DE24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C0FBC57-70CB-4A7D-914B-5BB18552DE24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C0FBC57-70CB-4A7D-914B-5BB18552DE24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7C5DE7B-3C6C-4AB3-BF1C-64C9A98196AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7C5DE7B-3C6C-4AB3-BF1C-64C9A98196AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7C5DE7B-3C6C-4AB3-BF1C-64C9A98196AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7C5DE7B-3C6C-4AB3-BF1C-64C9A98196AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0A331E4-B7E2-4F8E-A4CB-553E1B882EB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0A331E4-B7E2-4F8E-A4CB-553E1B882EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0A331E4-B7E2-4F8E-A4CB-553E1B882EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0A331E4-B7E2-4F8E-A4CB-553E1B882EB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88B35A64-DB5F-45A7-97CE-B2BCBE7056D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88B35A64-DB5F-45A7-97CE-B2BCBE7056D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88B35A64-DB5F-45A7-97CE-B2BCBE7056D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88B35A64-DB5F-45A7-97CE-B2BCBE7056D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43C579D2-DE72-474B-8D80-7B6501D661FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43C579D2-DE72-474B-8D80-7B6501D661FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43C579D2-DE72-474B-8D80-7B6501D661FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43C579D2-DE72-474B-8D80-7B6501D661FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
