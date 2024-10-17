@@ -1,0 +1,56 @@
+﻿<div class="mb-3">
+    <label for="" class="form-label">Title</label>
+    <input type="text" class="form-control" id="txtTitle" placeholder="Enter title">
+</div>
+<div class="mb-3">
+    <label for="" class="form-label">Author</label>
+    <input type="text" class="form-control" id="txtAuthor" placeholder="enter author">
+</div>
+<div class="mb-3">
+    <label for="" class="form-label">Content</label>
+    <input type="text" class="form-control" id="txtContent" placeholder="enter content">
+</div>
+<button type="button" class="btn btn-success" id="btnSave">Save</button>
+@section scripts{
+    <script>
+       
+        //alert();
+        $('#btnSave').click(function(e){
+            e.preventDefault();
+
+            let title = $('#txtTitle').val();
+            let author = $('#txtAuthor').val();
+            let content = $('#txtContent').val();
+            console.log(title, author, content);
+            
+            let _blog = {
+                BlogTitle: title,
+                BlogAuthor: author,
+                BlogContent: content
+            };
+
+            $.ajax({
+                type: 'Post',
+                url: '/Blog/Save/',
+                //data : JSON.stringify(_blog),
+                //contentType : 'application/json',
+                data: { blog: _blog },
+                DataType: "JSON",
+                success: function (result) {
+                    console.log("Result", result);
+
+                    if(!result.IsSuccess){
+                        alert(result.Message);
+                        return;
+                    }
+                    alert(result.Message);
+                    location.href = "/Blog";
+                },
+                error: function (xhr, status, error) {
+                    var err = eval("(" + xhr.responseText +")");
+                    alert(err.Message);
+                }
+            });
+        })
+    </script>
+}
