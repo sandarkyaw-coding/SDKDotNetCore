@@ -72,6 +72,7 @@ namespace SDKDotNetCore.MvcApp3.Controllers
             item.BlogTitle = blog.BlogTitle;
             item.BlogAuthor = blog.BlogAuthor;
             item.BlogContent = blog.BlogContent;
+
             _db.Entry(item).State = EntityState.Modified;
             var result = _db.SaveChanges();
             string message = result > 0 ? "Updating Successful." : "Updating Failed.";

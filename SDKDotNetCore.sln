@@ -55,11 +55,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCore.ConsoleAppEFC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCore.ConsoleAppEFCore.Databases", "SDKDotNetCore.ConsoleAppEFCore.Databases\SDKDotNetCore.ConsoleAppEFCore.Databases.csproj", "{88B35A64-DB5F-45A7-97CE-B2BCBE7056D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKDotNetCore.MvcDesignApp", "SDKDotNetCore.MvcDesignApp\SDKDotNetCore.MvcDesignApp.csproj", "{43C579D2-DE72-474B-8D80-7B6501D661FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCore.MvcDesignApp", "SDKDotNetCore.MvcDesignApp\SDKDotNetCore.MvcDesignApp.csproj", "{43C579D2-DE72-474B-8D80-7B6501D661FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKDotNetCore.BlazorWebasm", "SDKDotNetCore.BlazorWebasm\SDKDotNetCore.BlazorWebasm.csproj", "{F16B877C-E4C2-4BC2-B46E-A26A1C726A1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCore.BlazorWebasm", "SDKDotNetCore.BlazorWebasm\SDKDotNetCore.BlazorWebasm.csproj", "{F16B877C-E4C2-4BC2-B46E-A26A1C726A1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDKDotNetCore.MvcApp3", "SDKDotNetCore.MvcApp3\SDKDotNetCore.MvcApp3.csproj", "{9854D3F2-6669-4741-A1EC-21780472E773}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCore.MvcApp3", "SDKDotNetCore.MvcApp3\SDKDotNetCore.MvcApp3.csproj", "{9854D3F2-6669-4741-A1EC-21780472E773}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKDotNetCore.BlazorWasm2", "SDKDotNetCore.BlazorWasm2\SDKDotNetCore.BlazorWasm2.csproj", "{83EE062A-E63A-4369-9720-A19714D7E66F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -171,6 +173,10 @@ Global
 		{9854D3F2-6669-4741-A1EC-21780472E773}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9854D3F2-6669-4741-A1EC-21780472E773}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9854D3F2-6669-4741-A1EC-21780472E773}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83EE062A-E63A-4369-9720-A19714D7E66F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83EE062A-E63A-4369-9720-A19714D7E66F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83EE062A-E63A-4369-9720-A19714D7E66F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83EE062A-E63A-4369-9720-A19714D7E66F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

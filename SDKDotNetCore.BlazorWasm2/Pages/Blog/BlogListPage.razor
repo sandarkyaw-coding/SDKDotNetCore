@@ -1,0 +1,60 @@
+﻿@page "/blog"
+@inject HttpClient httpClient
+
+<PageTitle>Blog List</PageTitle>
+
+<NavLink href="/blog/create" class="btn btn-outline-success">New</NavLink>
+<h1>Blog</h1>
+@if(_blogs is not null){
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Author</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in _blogs)
+        {
+            <tr>
+                <td>
+                    <NavLink href="/blog/edit/@item.BlogId" class="btn btn-outline-warning">Edit</NavLink>
+                    <button class="btn btn-danger btn-delete" data-blog-id="@item.BlogId">Delete</button>
+                </td>
+                <td>@item.BlogId</td>
+                <td>@item.BlogTitle</td>
+                <td>@item.BlogContent</td>
+                <td>@item.BlogAuthor</td>
+            </tr>
+        }
+    </tbody>
+</table>
+}
+
+@code{
+    private List<BlogModel> _blogs = null;
+    //dont use for js in this one
+    protected override async Task OnInitializedAsync(){
+        var response = await httpClient.GetAsync("api/blog");
+        if (response.IsSuccessStatusCode)
+        {
+            var jsonStr = await response.Content.ReadAsStringAsync();
+            // Console.WriteLine(jsonStr);
+            //json to c#
+            _blogs = JsonConvert.DeserializeObject<List<BlogModel>>(jsonStr)!;
+            if (_blogs != null)
+            {
+                _blogs = _blogs.OrderByDescending(x => x.BlogId).ToList();
+            }
+        }
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+
+    }
+
+}

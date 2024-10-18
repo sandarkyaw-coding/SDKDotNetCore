@@ -1,0 +1,21 @@
+﻿@page "/blog/edit/{id}"
+@inject HttpClient httpClient
+
+<PageTitle>Edit Blog</PageTitle>
+
+@code {
+    [Parameter]
+    public string id { get; set; }
+
+    private BlogModel? blog = null;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender){
+        if(firstRender){
+            var response = await httpClient.GetAsync($"api/blog/{id}");
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonStr = await response.Content.ReadAsStringAsync();
+            }
+        }
+    }
+}
