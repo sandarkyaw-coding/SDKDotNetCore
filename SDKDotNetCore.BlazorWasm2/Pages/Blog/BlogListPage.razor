@@ -1,10 +1,33 @@
 ﻿@page "/blog"
 @inject HttpClient httpClient
+@inject IJSRuntime jsRuntime
+@inject NavigationManager nav
 
 <PageTitle>Blog List</PageTitle>
 
 <NavLink href="/blog/create" class="btn btn-outline-success">New</NavLink>
-<h1>Blog</h1>
+
+@if (_blog is not null)
+{
+    <div class="mb-3">
+        <label for="" class="form-label">Title</label>
+        <input type="text" class="form-control" placeholder="Enter title" @bind-value="_blog.BlogTitle">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Author</label>
+        <input type="text" class="form-control" placeholder="enter author" @bind-value="_blog.BlogAuthor">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Content</label>
+        <input type="text" class="form-control" placeholder="enter content" @bind-value="_blog.BlogContent">
+    </div>
+    <button type="button" class="btn btn-outline-dark" @onclick="Back">Back</button>
+    <button type="button" class="btn btn-success" @onclick="Update">Update</button>
+
+}
+
+<h1>Blog List</h1>
+
 @if(_blogs is not null){
 <table>
     <thead>
@@ -19,10 +42,12 @@
     <tbody>
         @foreach (var item in _blogs)
         {
-            <tr>
-                <td>
-                    <NavLink href="/blog/edit/@item.BlogId" class="btn btn-outline-warning">Edit</NavLink>
-                    <button class="btn btn-danger btn-delete" data-blog-id="@item.BlogId">Delete</button>
+                var editLink = $"/blog/edit/{@item.BlogId}";
+                <tr>
+                    <td>
+                        <NavLink href="@editLink" class="btn btn-warning">Edit</NavLink>
+                        <button type="button" @onclick="() => Edit(item.BlogId)" class="btn btn-outline-warning">Edit</button>
+                        <button class="btn btn-outline-danger btn-delete" @onclick="() => Delete(item.BlogId)">Delete</button>
                 </td>
                 <td>@item.BlogId</td>
                 <td>@item.BlogTitle</td>
@@ -35,12 +60,18 @@
 }
 
 @code{
-    private List<BlogModel> _blogs = null;
+    private List<BlogModel>? _blogs = null;
+    private BlogModel? _blog = null;
     //dont use for js in this one
     protected override async Task OnInitializedAsync(){
+        await List();
+    }
+
+    private async Task List(){
         var response = await httpClient.GetAsync("api/blog");
         if (response.IsSuccessStatusCode)
         {
+
             var jsonStr = await response.Content.ReadAsStringAsync();
             // Console.WriteLine(jsonStr);
             //json to c#
@@ -54,7 +85,50 @@
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
+        if (firstRender)
+        {
 
+        }
     }
 
+    private async Task Update()
+    {
+        var jsonBlog = JsonConvert.SerializeObject(_blog);
+        var content = new StringContent(jsonBlog, Encoding.UTF8, Application.Json);
+        var response = await httpClient.PutAsync($"api/blog/{_blog.BlogId}", content);
+
+        if (response.IsSuccessStatusCode)
+        {
+            var jsonStr = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(jsonStr);
+            _blog = null;
+            await List();
+        }
+    }
+
+    private async Task Edit(int id)
+    {
+        var response = await httpClient.GetAsync($"api/blog/{id}");
+        if (!response.IsSuccessStatusCode) return;
+
+        var jsonStr = await response.Content.ReadAsStringAsync();
+        _blog = JsonConvert.DeserializeObject<BlogModel>(jsonStr)!;
+    }
+
+    private void Back()
+    {
+        _blog = null;
+    }
+
+    private async Task Delete(int id){
+        var confirm = await jsRuntime.InvokeAsync<bool>("confirm", "Are u sure want to delete?");
+        if (!confirm) return;
+        var response = await httpClient.DeleteAsync($"api/blog/{id}");
+        if (!response.IsSuccessStatusCode) return;
+
+        var message = await response.Content.ReadAsStringAsync();
+        //alert(message)
+        await jsRuntime.InvokeVoidAsync("alert", message);
+        await List();
+    }
 }

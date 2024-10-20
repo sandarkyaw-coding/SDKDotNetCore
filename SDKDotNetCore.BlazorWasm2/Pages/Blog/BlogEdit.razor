@@ -1,11 +1,12 @@
-﻿@* @page "/blog/edit/{id}" *@ 
+﻿@page "/blog/edit/{id:int}"
 @inject HttpClient httpClient
 @inject NavigationManager nav
+@inject IJSRuntime jsRuntime
 
-<PageTitle>Edit Blog</PageTitle>
-
-@if (_blog is not null)
+<h3>BlogEdit</h3>
+@if(_blog is not null)
 {
+
     <div class="mb-3">
         <label for="" class="form-label">Title</label>
         <input type="text" class="form-control" placeholder="Enter title" @bind-value="_blog.BlogTitle">
@@ -18,12 +19,12 @@
         <label for="" class="form-label">Content</label>
         <input type="text" class="form-control" placeholder="enter content" @bind-value="_blog.BlogContent">
     </div>
-    <button type="button" class="btn btn-success" @onclick="Update">Update</button>
-
+    <NavLink href="/blog" class="btn btn-outline-dark">Cancel</NavLink>
+    <button type="button" class="btn btn-outline-success" @onclick="Update">Update</button>
 }
 @code {
     [Parameter]
-    public string? id { get; set; }
+    public int? id { get; set; }
 
     private BlogModel? _blog = null;
 
@@ -32,14 +33,14 @@
         if (firstRender)
         {
             var response = await httpClient.GetAsync($"api/blog/{id}");
-            if (!response.IsSuccessStatusCode)
+            if (response.IsSuccessStatusCode)
             {
-                nav.NavigateTo("/blog");
+                var jsonStr = await response.Content.ReadAsStringAsync();
+                _blog = JsonConvert.DeserializeObject<BlogModel>(jsonStr);
+                StateHasChanged();
             }
-            var jsonStr = await response.Content.ReadAsStringAsync();
-            _blog = JsonConvert.DeserializeObject<BlogModel>(jsonStr);
-            StateHasChanged();
         }
+
     }
 
     private async Task Update()
@@ -50,9 +51,10 @@
 
         if (response.IsSuccessStatusCode)
         {
-            var jsonStr = await response.Content.ReadAsStringAsync();
-            Console.WriteLine(jsonStr);
+            var message = await response.Content.ReadAsStringAsync();
+            await jsRuntime.InvokeVoidAsync("alert", message);
             nav.NavigateTo("/blog");
         }
     }
+
 }

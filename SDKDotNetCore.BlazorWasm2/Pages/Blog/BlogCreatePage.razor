@@ -16,7 +16,8 @@
     <label for="" class="form-label">Content</label>
     <input type="text" class="form-control" placeholder="enter content" @bind-value="_blog.BlogContent">
 </div>
-<button type="button" class="btn btn-success" @onclick="Save">Save</button>
+<NavLink href="/blog" class="btn btn-outline-dark">Cancel</NavLink>
+<button type="button" class="btn btn-outline-success" @onclick="Save">Save</button>
 
 @code {
     private BlogModel _blog = new BlogModel();
