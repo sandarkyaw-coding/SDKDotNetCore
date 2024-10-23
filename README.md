@@ -64,3 +64,5 @@ dotnet ef dbcontext scaffold "Server=.;Database=SDKDotNetCore;User Id=sa;Passwor
 dotnet ef dbcontext scaffold "Server=.;Database=SDKDotNetCore;User Id=sa;Password=sasa@123;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -c AppDbContext -t Tbl_PieChart -f
 
 dotnet ef dbcontext scaffold "Server=.;Database=SDKDotNetCore;User ID=sa;Password=sasa@123;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -c AppDbContext -f
+
+test ..
