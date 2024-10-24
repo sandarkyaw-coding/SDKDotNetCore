@@ -1,0 +1,63 @@
+﻿@page "/blog/edit/{blogId:int}"
+@inject AppDbContext db
+
+<h3>BlogEditPage</h3>
+
+@if (_blog is not null)
+{
+
+    <div class="mb-3">
+        <label for="" class="form-label">Title</label>
+        <input type="text" class="form-control" placeholder="Enter title" @bind-value="_blog.BlogTitle">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Author</label>
+        <input type="text" class="form-control" placeholder="enter author" @bind-value="_blog.BlogAuthor">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Content</label>
+        <input type="text" class="form-control" placeholder="enter content" @bind-value="_blog.BlogContent">
+    </div>
+    <NavLink href="/blog" class="btn btn-outline-dark">Cancel</NavLink>
+    <button type="button" class="btn btn-outline-success" @onclick="Update">Update</button>
+}
+
+@code {
+    [Parameter]
+    public int blogId{ get; set; }
+
+    private BlogModel? _blog = null;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            _blog = await db.Blogs
+            .AsNoTracking()
+            .FirstOrDefaultAsync(x => x.BlogId == blogId);
+            StateHasChanged();
+        }
+    }
+
+    private async Task Update()
+    {
+        var item = await db.Blogs
+        .AsNoTracking()
+        .FirstOrDefaultAsync(x => x.BlogId == blogId);
+        if(item is null)
+        {
+            await jsRuntime.InvokeVoidAsync("alert", "No Data Found");
+            nav.NavigateTo("/blog");
+        }
+
+        item.BlogTitle = _blog.BlogTitle;
+        item.BlogAuthor = _blog.BlogAuthor;
+        item.BlogContent = _blog.BlogContent;
+
+        db.Entry(item).State = EntityState.Modified;
+        var result = await db.SaveChangesAsync();
+
+        await jsRuntime.InvokeVoidAsync("alert", result > 0 ? "Updating Successful." : "Updating Failed.");
+        nav.NavigateTo("/blog");
+    }
+}

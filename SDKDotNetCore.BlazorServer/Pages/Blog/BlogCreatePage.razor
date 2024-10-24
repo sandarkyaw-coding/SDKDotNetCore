@@ -1,0 +1,35 @@
+﻿@page "/blog/create"
+@inject AppDbContext db
+@inject IJSRuntime jsRuntime
+
+<PageTitle>Blog Create Page</PageTitle>
+<h3>BlogCreatePage</h3>
+
+<div class="mb-3">
+    <label for="" class="form-label">Title</label>
+    <input type="text" class="form-control" placeholder="Enter title" @bind-value="_blog.BlogTitle">
+</div>
+<div class="mb-3">
+    <label for="" class="form-label">Author</label>
+    <input type="text" class="form-control" placeholder="enter author" @bind-value="_blog.BlogAuthor">
+</div>
+<div class="mb-3">
+    <label for="" class="form-label">Content</label>
+    <input type="text" class="form-control" placeholder="enter content" @bind-value="_blog.BlogContent">
+</div>
+<NavLink href="/blog" class="btn btn-outline-dark">Cancel</NavLink>
+<button type="button" class="btn btn-outline-success" @onclick="Save">Save</button>
+
+@code {
+    private BlogModel _blog = new BlogModel();
+
+    private async Task Save()
+    {
+        await db.Blogs.AddAsync(_blog);
+        var result = await db.SaveChangesAsync();
+
+        await jsRuntime.InvokeVoidAsync("alert",result > 0 ? "Saving Successful." : "Saving Failed.");
+
+        _blog = new BlogModel();
+    }
+}

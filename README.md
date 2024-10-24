@@ -66,3 +66,9 @@ dotnet ef dbcontext scaffold "Server=.;Database=SDKDotNetCore;User Id=sa;Passwor
 dotnet ef dbcontext scaffold "Server=.;Database=SDKDotNetCore;User ID=sa;Password=sasa@123;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -c AppDbContext -f
 
 test ..
+
+EFCore 
+
+Ado dot net 
+
+dapper
