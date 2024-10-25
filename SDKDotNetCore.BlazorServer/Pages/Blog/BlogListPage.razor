@@ -4,7 +4,7 @@
 <PageTitle>Blog List</PageTitle>
 <h3>BlogListPage</h3>
 
-<NavLink href="/blog/create" class="btn btn-outline-success">New</NavLink>
+<a href="/blog/create" class="btn btn-outline-success">New</a>
 
 @if(_blogs is not null)
 {
@@ -24,7 +24,7 @@
                 var editLink = $"/blog/edit/{@item.BlogId}";
                 <tr>
                     <td>
-                        <NavLink href="@editLink" class="btn btn-warning">Edit</NavLink>
+                        <a href="@editLink" class="btn btn-warning">Edit</a>
                         @* <button type="button" @onclick="() => Edit(item.BlogId)" class="btn btn-outline-warning">Edit</button>*@
                 <button class="btn btn-outline-danger btn-delete" @onclick="() => Delete(item.BlogId)">Delete</button>
                     </td>
